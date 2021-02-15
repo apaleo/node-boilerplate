@@ -1,0 +1,8 @@
+typescript: true
+input-file: booking-v1.json
+output-folder: client
+add-credentials: false
+generate-metadata: false
+enum-types: true
+clear-output-folder: true
+source-code-folder-path: './'
