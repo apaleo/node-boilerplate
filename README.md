@@ -1,6 +1,6 @@
 ## node-boilerplate
 
-Quickstart TypeScript/Node.js project template with Dockerfile.
+Quickstart TypeScript/Node.js project template with built-in apaleo client.
 
 ### Quickstart
 
