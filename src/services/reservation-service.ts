@@ -1,4 +1,3 @@
-import { APALEO_BASE_URL } from '../environment';
 import {
   ApaleoBookingAPI,
   ReservationModel,
@@ -8,7 +7,7 @@ import { ApaleoOauth } from './apaleo-oauth';
 export class ReservationService {
   private readonly apiClient = new ApaleoBookingAPI(
     new ApaleoOauth(),
-    APALEO_BASE_URL
+    process.env.APALEO_BASE_URL
   );
 
   public async getReservationById(id: string): Promise<ReservationModel> {

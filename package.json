@@ -4,11 +4,10 @@
   "description": "One liner node.js example app of interaction with apaleo API",
   "scripts": {
     "clean": "rimraf dist/",
-    "copy-filtes": "copyfiles -u 1 src/views/*.html dist/src/",
-    "build": "npm run clean && npm run copy-filtes && tsc",
+    "build": "webpack",
     "format": "prettier --write .",
-    "serve": "node dist/src/server.js",
-    "start": "npm run build && npm run serve"
+    "serve": "node dist/server.js",
+    "start": "npm run clean && npm run build && npm run serve"
   },
   "dependencies": {
     "@azure/core-http": "^1.2.3",
@@ -22,10 +21,18 @@
     "@types/eslint": "^7.2.6",
     "@types/express": "^4.17.11",
     "copyfiles": "^2.4.1",
+    "dotenv-webpack": "^6.0.0",
     "eslint": "^7.19.0",
+    "html-loader": "^2.0.0",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
-    "typescript": "^4.1.5"
+    "ts-loader": "^8.0.17",
+    "tsconfig-paths": "^3.9.0",
+    "tsconfig-paths-webpack-plugin": "^3.3.0",
+    "typescript": "^4.1.5",
+    "webpack": "^5.22.0",
+    "webpack-cli": "^4.5.0",
+    "webpack-node-externals": "^2.5.2"
   },
   "license": "MIT"
 }

@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
-import path from 'path';
+const home = require('../views/home.html');
 
 /**
  * Home page.
  * @route GET /
  */
 export const index = (req: Request, res: Response) => {
-  res.sendFile(path.dirname(require.main.filename) + '/views/home.html');
+  res.send(home.default)
 };
