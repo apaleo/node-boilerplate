@@ -6,6 +6,8 @@ COPY ["package.json", "package-lock.json*", "./"]
 
 RUN npm install
 
-COPY . .
+RUN npm build
 
-CMD [ "node", "index.js" ]
+COPY ./dist .
+
+CMD [ "node", "server.js" ]

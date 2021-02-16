@@ -11,7 +11,7 @@ Quickstart TypeScript/Node.js project template with built-in apaleo client.
 ### Docker
 
 1. Build docker image `docker build -t app .`
-2. Start docker container `docker run --it app`
+2. Start docker container `docker run -it app`
 
 ### Contribution
 
