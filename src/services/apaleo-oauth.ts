@@ -1,12 +1,14 @@
 import axios from 'axios';
 import * as qs from 'querystring';
 import { AccessToken, TokenCredential } from '@azure/core-http';
-import { APALEO_CLIENT_ID, APALEO_CLIENT_SECRET } from '../environment';
+import {
+  APALEO_CLIENT_ID,
+  APALEO_CLIENT_SECRET,
+  APALEO_IDENTITY_URL,
+} from '../environment';
 
 export class ApaleoOauth implements TokenCredential {
-  private baseUrl = 'https://identity.apaleo.com';
-
-  constructor(private httpClient = axios.create()) {}
+  private readonly httpClient = axios.create();
 
   public async getToken(): Promise<AccessToken | null> {
     if (!APALEO_CLIENT_ID || !APALEO_CLIENT_SECRET) {
@@ -16,7 +18,7 @@ export class ApaleoOauth implements TokenCredential {
     const now = new Date();
 
     const response = await this.httpClient.post(
-      `${this.baseUrl}/connect/token`,
+      `${APALEO_IDENTITY_URL}/connect/token`,
       qs.stringify({
         grant_type: 'client_credentials',
       }),

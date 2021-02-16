@@ -1,0 +1,31 @@
+{
+  "name": "node-boilerplate",
+  "version": "1.0.0",
+  "description": "One liner node.js example app of interaction with apaleo API",
+  "scripts": {
+    "clean": "rimraf dist/",
+    "copy-filtes": "copyfiles -u 1 src/views/*.html dist/src/",
+    "build": "npm run clean && npm run copy-filtes && tsc",
+    "format": "prettier --write .",
+    "serve": "node dist/src/server.js",
+    "start": "npm run build && npm run serve"
+  },
+  "dependencies": {
+    "@azure/core-http": "^1.2.3",
+    "@types/compression": "^1.7.0",
+    "axios": "^0.21.1",
+    "compression": "^1.7.4",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "@types/eslint": "^7.2.6",
+    "@types/express": "^4.17.11",
+    "copyfiles": "^2.4.1",
+    "eslint": "^7.19.0",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.5"
+  },
+  "license": "MIT"
+}
