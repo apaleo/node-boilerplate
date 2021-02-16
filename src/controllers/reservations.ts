@@ -9,7 +9,7 @@ export const getReservationById = async (req: Request, res: Response) => {
   const service = new ReservationService();
   const reservation = await service.getReservationById(req.params.id);
 
-  console.log('Reservation: ', reservation);
+  console.log('**** Reservation ****\n', reservation);
 
   res.json(reservation);
 };
